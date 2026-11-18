@@ -1,3 +1,11 @@
+## Unreleased
+
+* Migrate to the extracted `material_ui` library (Dart >=3.13, Flutter >=3.47).
+* Preserve fork title/footer, indicator customization, minimum size, and
+  independent content scrolling; cover dragging, snapping, and interaction
+  behind the sheet under the modern Material Scaffold.
+* Fix the example's nested unbounded scroll view and use Flutter 3.50.0 via FVM.
+
 ## 1.1.0
 
 * *BREAKING*: Changed handling of scrolling for further customization.

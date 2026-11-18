@@ -1,16 +1,16 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:interactive_bottom_sheet/interactive_bottom_sheet.dart';
 import 'package:interactive_bottom_sheet_example/theme.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const new({super.key});
 
   static const LatLng _position = LatLng(49.866903671198635, 8.627595429347092);
 
@@ -20,14 +20,12 @@ class MyApp extends StatelessWidget {
       theme: CustomTheme.theme(context),
       home: Scaffold(
         bottomSheet: InteractiveBottomSheet(
-          child: ListView(
+          child: Padding(
             padding: const EdgeInsets.all(15),
-            children: [
-              Text(
-                lorem(paragraphs: 4, words: 2000),
-                style: const TextStyle(fontSize: 20),
-              ),
-            ],
+            child: Text(
+              lorem(paragraphs: 4, words: 2000),
+              style: const TextStyle(fontSize: 20),
+            ),
           ),
         ),
         appBar: AppBar(

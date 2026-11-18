@@ -1,17 +1,17 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class CustomTheme {
-  const CustomTheme._();
+  const new _();
 
   static ThemeData theme(BuildContext context) => ThemeData(
-        useMaterial3: false,
-        colorScheme: Theme.of(context).colorScheme.copyWith(
-              primary: _green,
-              secondary: _yellow,
-            ),
-        bottomSheetTheme:
-            const BottomSheetThemeData(backgroundColor: Colors.transparent),
-      );
+    colorScheme: Theme.of(context).colorScheme.copyWith(
+      primary: _green,
+      secondary: _yellow,
+    ),
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: Colors.transparent,
+    ),
+  );
 
   static const MaterialColor _green = MaterialColor(
     _greenPrimaryValue,

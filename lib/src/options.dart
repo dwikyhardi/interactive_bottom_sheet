@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 /// Options class.
 class InteractiveBottomSheetOptions {
   ///  Contains all options for customization of the InteractiveBottomSheet.
-  const InteractiveBottomSheetOptions({
+  const new({
     this.backgroundColor = Colors.white,
     this.expand = false,
     this.snap = true,
@@ -12,9 +12,9 @@ class InteractiveBottomSheetOptions {
     this.minimumSize = 0.25,
     this.snapList = const [0.5],
   }) : assert(
-          minimumSize <= initialSize,
-          'MinimumSize must be smaller than or equal to initialSize.',
-        );
+         minimumSize <= initialSize,
+         'MinimumSize must be smaller than or equal to initialSize.',
+       );
 
   /// The background color of the whole widget.
   final Color backgroundColor;
@@ -47,7 +47,7 @@ class InteractiveBottomSheetOptions {
 /// Options class for the DraggableArea.
 class DraggableAreaOptions {
   ///  Contains all options for customization of the DraggableArea.
-  const DraggableAreaOptions({
+  const new({
     double? topBorderRadius,
     double? height,
     Color? backgroundColor,
@@ -58,19 +58,20 @@ class DraggableAreaOptions {
     EdgeInsetsGeometry? indicatorPadding,
     List<BoxShadow>? shadows,
     this.title,
-  })  : topBorderRadius = topBorderRadius ?? 10.0,
-        height = height ?? (title != null ? 80.0 : 50.0),
-        backgroundColor = backgroundColor ?? Colors.white,
-        indicatorColor = indicatorColor ?? Colors.black,
-        indicatorWidth = indicatorWidth ?? 40.0,
-        indicatorHeight = indicatorHeight ?? 5.0,
-        indicatorRadius = indicatorRadius ?? 5.0,
-        indicatorPadding =
-            indicatorPadding ?? const EdgeInsets.symmetric(vertical: 16),
-        shadows = shadows ??
-            const [
-              BoxShadow(color: Colors.grey, blurRadius: 1),
-            ];
+  }) : topBorderRadius = topBorderRadius ?? 10.0,
+       height = height ?? (title != null ? 80.0 : 50.0),
+       backgroundColor = backgroundColor ?? Colors.white,
+       indicatorColor = indicatorColor ?? Colors.black,
+       indicatorWidth = indicatorWidth ?? 40.0,
+       indicatorHeight = indicatorHeight ?? 5.0,
+       indicatorRadius = indicatorRadius ?? 5.0,
+       indicatorPadding =
+           indicatorPadding ?? const EdgeInsets.symmetric(vertical: 16),
+       shadows =
+           shadows ??
+           const [
+             BoxShadow(color: Colors.grey, blurRadius: 1),
+           ];
 
   /// Top Radius of the bottom sheet. To see it, a transparent background color
   /// for the bottomSheetTheme is necessary.

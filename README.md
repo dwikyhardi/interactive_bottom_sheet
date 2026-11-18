@@ -19,6 +19,10 @@ A customizable interactive bottom sheet, which lets you interact with the screen
 
 ## Usage
 
+Requires Dart 3.13 or later and Flutter 3.47 or later. This fork uses the
+extracted `material_ui` library; import its widgets in consuming apps as well.
+`cupertino_ui` is supplied transitively by `material_ui`.
+
 Depend on it:
 
 ```yaml
@@ -29,6 +33,7 @@ dependencies:
 Import it:
 
 ```dart
+import 'package:material_ui/material_ui.dart';
 import 'package:interactive_bottom_sheet/interactive_bottom_sheet.dart';
 ```
 
@@ -49,8 +54,7 @@ Scaffold(
 
 ```dart
 Scaffold(
-  bottomSheet: const Scaffold(
-  bottomSheet: InteractiveBottomSheet(
+  bottomSheet: const InteractiveBottomSheet(
     options: InteractiveBottomSheetOptions(
       maxSize: 0.75,
       backgroundColor: Colors.green,
@@ -58,18 +62,28 @@ Scaffold(
     ),
     draggableAreaOptions: DraggableAreaOptions(
       topBorderRadius: 10,
-      height: 75,
+      height: 100,
       backgroundColor: Colors.grey,
       indicatorColor: Colors.grey,
       indicatorWidth: 50,
-      indicatorHeight: 50,
+      indicatorHeight: 5,
       indicatorRadius: 10,
-      ),
+      indicatorPadding: EdgeInsets.symmetric(vertical: 16),
+      title: Text('Sheet title'),
     ),
     child: Text('Lorem ipsum dolor sit amet.'),
+    footer: Text('Footer'),
   ),
 );
 ```
+
+The fork scrolls `child` and `footer` together below the drag area. Pass ordinary
+content (for example, `Text`, `Padding`, or a `Column`) rather than an unbounded
+nested `ListView`. Dragging the indicator/title area resizes the sheet; scrolling
+the content keeps the sheet at its current size. Content outside the sheet stays
+interactive in a `Scaffold`, including with the default Material 3 theme.
+The framework's persistent-sheet behavior still applies: collapsing after an
+expansion resets to `initialSize`, and expansion past 70% adds a body scrim.
 
 ## Top Border Radius
 
@@ -88,6 +102,19 @@ Theme(
     ),
   ),
 );
+```
+
+## Local verification
+
+The checked-in FVM configuration selects Flutter 3.50.0.
+
+```sh
+fvm flutter pub get
+fvm flutter test
+fvm flutter analyze
+cd example
+fvm flutter test
+fvm flutter analyze
 ```
 
 [pub_badge]: https://img.shields.io/pub/v/interactive_bottom_sheet.svg

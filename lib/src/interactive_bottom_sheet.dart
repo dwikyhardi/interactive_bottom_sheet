@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:interactive_bottom_sheet/src/indicator_widget.dart';
 import 'package:interactive_bottom_sheet/src/options.dart';
 
 /// The InteractiveBottomSheet.
 class InteractiveBottomSheet extends StatefulWidget {
   /// Should be placed inside the bottomSheet property of a Scaffold.
-  const InteractiveBottomSheet({
+  const new({
     super.key,
     this.options = const InteractiveBottomSheetOptions(),
     this.draggableAreaOptions = const DraggableAreaOptions(),
@@ -110,7 +110,7 @@ class _InteractiveBottomSheetState extends State<InteractiveBottomSheet> {
 }
 
 class _InteractiveBottomSheetDraggableArea extends StatelessWidget {
-  const _InteractiveBottomSheetDraggableArea({
+  const new({
     required this.options,
   });
 
@@ -141,7 +141,8 @@ class _InteractiveBottomSheetDraggableArea extends StatelessWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-        .add(DiagnosticsProperty<DraggableAreaOptions>('options', options));
+    properties.add(
+      DiagnosticsProperty<DraggableAreaOptions>('options', options),
+    );
   }
 }

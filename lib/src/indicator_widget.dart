@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:interactive_bottom_sheet/src/options.dart';
 
 /// A StatelessWidget that represents the IndicatorWidget.
@@ -16,7 +16,7 @@ class IndicatorWidget extends StatelessWidget {
   /// as a parameter. This instance is used to customize the appearance of the
   /// DraggableArea. The `key` parameter is optional and can be used to control
   /// the framework's widget replacement and state preservation decisions.
-  const IndicatorWidget({required this.options, super.key});
+  const new({required this.options, super.key});
 
   /// The options for the DraggableArea.
   ///

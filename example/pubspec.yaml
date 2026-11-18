@@ -4,11 +4,13 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.6.0
+  sdk: ^3.13.0
+  flutter: '>=3.47.0'
 
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.11.1
 
   interactive_bottom_sheet:
     path: ../
@@ -19,8 +21,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  cosee_lints: ^0.8.0
-  dart_code_linter: ^2.0.0
+  cosee_lints: ^0.16.0
+  dart_code_linter: ^4.4.5
 
 flutter:
   uses-material-design: true
